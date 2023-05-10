@@ -1,0 +1,28 @@
+{
+    "name": "dimaster19/lab3",
+    "description": "Expa",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dimaster19",
+            "email": "pavlikov.dima5@gmail.com",
+            "homepage": "https://github.com/dimaster19/lab3"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lab3\\Providers\\Lab3ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Lab3\\": "src"
+        }
+    }
+}
