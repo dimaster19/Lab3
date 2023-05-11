@@ -39,5 +39,10 @@ class Lab3ServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../copy/views' => resource_path('views'),
         ], 'public');
+
+        //Модели
+        $this->publishes([
+            __DIR__ . '/../copy/Models' => resource_path('views'),
+        ], 'public');
     }
 }
