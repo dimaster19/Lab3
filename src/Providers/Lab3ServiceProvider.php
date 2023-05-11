@@ -29,54 +29,30 @@ class Lab3ServiceProvider extends ServiceProvider
 
 
 
-        // $this->loadViewsFrom(__DIR__ . '/../resources/views', 'lab3');
-        // Маршруты
-        $this->loadRoutesFrom(__DIR__.'/../copy/routes/web.php');
+           // Маршруты
+           $this->loadRoutesFrom(__DIR__.'/../copy/routes/web.php');
 
-        // Фасады
-        $this->app->bind('currencyExchange', 'App\Services\CurrencyExchangeService');
-        $this->app->bind('geoService', 'App\Services\GeoService');
+           // Фасады
+           $this->app->bind('currencyExchange', 'Lab3\Services\CurrencyExchangeService');
+           $this->app->bind('geoService', 'Lab3\Services\GeoService');
 
-        // ----------------------- Публикация -----------------------
-        // Миграции
-        $migrations_path = __DIR__ . '/../copy/migrations';
-        if (file_exists($migrations_path)) {
-            $this->publishes([
-                $migrations_path => database_path('migrations'),
-            ], 'public');
-        }
+           // ----------------------- Публикация -----------------------
+           // Миграции
+           $migrations_path = __DIR__ . '/../copy/migrations';
+           if (file_exists($migrations_path)) {
+               $this->publishes([
+                   $migrations_path => database_path('migrations'),
+               ], 'public');
+           }
 
-        // Контроллеры
-        $migrations_path = __DIR__ . '/../copy/Controllers';
-        if (file_exists($migrations_path)) {
-            $this->publishes([
-                $migrations_path => app_path('Http/Controllers'),
-            ], 'public');
-        }
+           // Представления
+           $migrations_path = __DIR__ . '/../copy/views';
+           if (file_exists($migrations_path)) {
+               $this->publishes([
+                   $migrations_path => resource_path('views/lab3'),
+               ], 'public');
+           }
 
-        // Службы/Сервисы
-        $migrations_path = __DIR__ . '/../copy/Services';
-        if (file_exists($migrations_path)) {
-            $this->publishes([
-                $migrations_path => app_path('Http/Services'),
-            ], 'public');
-        }
-
-        // Фасады
-        $migrations_path = __DIR__ . '/../copy/Facades';
-        if (file_exists($migrations_path)) {
-            $this->publishes([
-                $migrations_path => app_path('Http/Facades'),
-            ], 'public');
-        }
-
-        // Представления
-        $migrations_path = __DIR__ . '/../copy/views';
-        if (file_exists($migrations_path)) {
-            $this->publishes([
-                $migrations_path => resource_path('views'),
-            ], 'public');
-        }
 
 
 
