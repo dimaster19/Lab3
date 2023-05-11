@@ -30,7 +30,7 @@ class Lab3ServiceProvider extends ServiceProvider
 
 
            // Маршруты
-           $this->loadRoutesFrom(__DIR__.'/../copy/routes/web.php');
+           $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
            // Фасады
            $this->app->bind('currencyExchange', 'Lab3\Services\CurrencyExchangeService');
