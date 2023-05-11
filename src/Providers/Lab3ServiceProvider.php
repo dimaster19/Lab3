@@ -16,6 +16,10 @@ class Lab3ServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register('Lab3\Providers\Lab3ServiceProvider');
+
+        // Фасады
+        $this->app->bind('currencyExchange', 'Lab3\Services\CurrencyExchangeService');
+        $this->app->bind('geoService', 'Lab3\Services\GeoService');
     }
 
     /**
@@ -26,23 +30,16 @@ class Lab3ServiceProvider extends ServiceProvider
     public function boot()
     {
 
-           // Маршруты
-           $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        // Маршруты
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-           // Фасады
-           $this->app->bind('currencyExchange', 'Lab3\Services\CurrencyExchangeService');
-           $this->app->bind('geoService', 'Lab3\Services\GeoService');
+        // Миграции
+        $this->loadMigrationsFrom(__DIR__ . '/../copy/migrations');
 
-           // Миграции
-           $this->loadMigrationsFrom(__DIR__.'/../copy/migrations');
-
-           // ----------------------- Публикация -----------------------
-           // Представления
-           $this->publishes([
-            __DIR__.'/../copy/views' => resource_path('views'),
+        // ----------------------- Публикация -----------------------
+        // Представления
+        $this->publishes([
+            __DIR__ . '/../copy/views' => resource_path('views'),
         ], 'public');
-
-
-
     }
 }
