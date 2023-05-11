@@ -33,22 +33,16 @@ class Lab3ServiceProvider extends ServiceProvider
            $this->app->bind('currencyExchange', 'Lab3\Services\CurrencyExchangeService');
            $this->app->bind('geoService', 'Lab3\Services\GeoService');
 
-           // ----------------------- Публикация -----------------------
            // Миграции
-           $migrations_path = __DIR__ . '/../copy/migrations';
-           if (file_exists($migrations_path)) {
-               $this->publishes([
-                   $migrations_path => database_path('migrations'),
-               ], 'public');
-           }
+           $this->loadMigrationsFrom(__DIR__.'/../copy/migrations');
 
+           // ----------------------- Публикация -----------------------
            // Представления
-           $migrations_path = __DIR__ . '/../copy/views';
-           if (file_exists($migrations_path)) {
-               $this->publishes([
-                   $migrations_path => resource_path('views/lab3'),
-               ], 'public');
-           }
+           $this->publishes([
+            __DIR__.'/../copy/views' => resource_path('views'),
+        ], 'public');
+
+
 
     }
 }
