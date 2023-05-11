@@ -3,7 +3,8 @@
 namespace Lab3\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\Facades\CurrencyExchange;
+use Lab3\Facades\CurrencyExchange;
+use Lab3\Facades\GeoService;
 
 class Home extends Controller
 {
