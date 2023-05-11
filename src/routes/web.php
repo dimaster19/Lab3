@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\DeliverController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\StorageController;
-use App\Http\Controllers\Home;
+use Lab3\Controllers\CategoryController;
+use Lab3\Controllers\ClientController;
+use Lab3\Controllers\DeliverController;
+use Lab3\Controllers\OrderController;
+use Lab3\Controllers\ProductController;
+use Lab3\Controllers\StorageController;
+use Lab3\Controllers\Home;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
