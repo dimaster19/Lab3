@@ -16,8 +16,12 @@ class Home extends Controller
     public function __invoke(Request $request)
     {
 
-        //$result = CurrencyExchange::getCurrency();
-        //echo( $result->result);
+        $result = CurrencyExchange::getCurrency('USD', 'RUB', 1);
+        echo( $result->result);
+        $addr1 = GeoService::getGeo('Moscow');
+        $addr2 = GeoService::getGeo('Donetsk');
+        $result = GeoService::calculateDistanceMath($addr1->latitude, $addr1->longitude, $addr2->latitude, $addr2->longitude);
+        echo($result);
         return view('index');
 
     }
