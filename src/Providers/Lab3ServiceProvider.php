@@ -50,7 +50,7 @@ class Lab3ServiceProvider extends ServiceProvider
         $migrations_path = __DIR__ . '/../copy/Controllers';
         if (file_exists($migrations_path)) {
             $this->publishes([
-                $migrations_path => app_path('Http/Controllers/Lab3'),
+                $migrations_path => app_path('Http/Controllers'),
             ], 'public');
         }
 
@@ -58,7 +58,7 @@ class Lab3ServiceProvider extends ServiceProvider
         $migrations_path = __DIR__ . '/../copy/Services';
         if (file_exists($migrations_path)) {
             $this->publishes([
-                $migrations_path => app_path('Http/Services/Lab3'),
+                $migrations_path => app_path('Http/Services'),
             ], 'public');
         }
 
@@ -66,7 +66,7 @@ class Lab3ServiceProvider extends ServiceProvider
         $migrations_path = __DIR__ . '/../copy/Facades';
         if (file_exists($migrations_path)) {
             $this->publishes([
-                $migrations_path => app_path('Http/Facades/Lab3'),
+                $migrations_path => app_path('Http/Facades'),
             ], 'public');
         }
 
@@ -74,7 +74,7 @@ class Lab3ServiceProvider extends ServiceProvider
         $migrations_path = __DIR__ . '/../copy/views';
         if (file_exists($migrations_path)) {
             $this->publishes([
-                $migrations_path => resource_path('views/lab3'),
+                $migrations_path => resource_path('views'),
             ], 'public');
         }
 
