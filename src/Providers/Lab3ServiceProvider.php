@@ -15,7 +15,7 @@ class Lab3ServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register('Lab3ServiceProvider\Lab3ServiceProvider');
+        $this->app->register('Lab3\Providers\Lab3ServiceProvider');
     }
 
     /**
