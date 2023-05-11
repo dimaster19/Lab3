@@ -1,12 +1,12 @@
 <?php
-namespace App\Facades;
+namespace Lab3\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class CurrencyExchange extends Facade
+class GeoService extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'currencyExchange';
+        return 'geoService';
     }
 }

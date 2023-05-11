@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace Lab3\Controllers;
 use App\Models\Deliver;
 use App\Http\Requests\StoreDeliverRequest;
 use App\Http\Requests\UpdateDeliverRequest;

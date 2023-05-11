@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Models\Storage;
-use App\Http\Requests\StoreStorageRequest;
-use App\Http\Requests\UpdateStorageRequest;
+namespace Lab3\Controllers;
+use App\Models\Product;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Http\Request;
 
-class StorageController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
-        $storages = Storage::all();
-        return $storages;
+        $products = Product::all();
+        return $products;
     }
 
     public function create(Request $request)
@@ -26,7 +25,7 @@ class StorageController extends Controller
             'delivery_id' => 'required',
         ]);
 
-        Storage::create($request->all());
+        Product::create($request->all());
 
         return true;
     }
@@ -42,8 +41,8 @@ class StorageController extends Controller
             'delivery_id' => 'required',
 
         ]);
-        $storage = Storage::find($request->id);
-        $storage->update($request->all());
+        $product = Product::find($request->id);
+        $product->update($request->all());
         return true;
 
     }
@@ -51,8 +50,8 @@ class StorageController extends Controller
 
     public function destroy(Request $request)
     {
-       $storage = Storage::find($request->id);
-       $storage->delete();
+       $product = Product::find($request->id);
+       $product->delete();
        return true;
 
     }

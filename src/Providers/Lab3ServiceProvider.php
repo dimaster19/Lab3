@@ -33,6 +33,10 @@ class Lab3ServiceProvider extends ServiceProvider
         // Маршруты
         $this->loadRoutesFrom(__DIR__.'/../copy/routes/web.php');
 
+        // Фасады
+        $this->app->bind('currencyExchange', 'App\Services\CurrencyExchangeService');
+        $this->app->bind('geoService', 'App\Services\GeoService');
+
         // ----------------------- Публикация -----------------------
         // Миграции
         $migrations_path = __DIR__ . '/../copy/migrations';
