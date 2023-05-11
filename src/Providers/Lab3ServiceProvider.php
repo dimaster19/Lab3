@@ -16,7 +16,6 @@ class Lab3ServiceProvider extends ServiceProvider
     public function register()
     {
 
-
     }
 
     /**
@@ -26,8 +25,6 @@ class Lab3ServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
 
            // Маршруты
            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
@@ -52,9 +49,6 @@ class Lab3ServiceProvider extends ServiceProvider
                    $migrations_path => resource_path('views/lab3'),
                ], 'public');
            }
-
-
-
 
     }
 }
