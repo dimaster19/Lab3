@@ -15,8 +15,6 @@ class Lab3ServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register('Lab3\Providers\Lab3ServiceProvider');
-
         // Фасады
         $this->app->bind('currencyExchange', 'Lab3\Services\CurrencyExchangeService');
         $this->app->bind('geoService', 'Lab3\Services\GeoService');
